@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Shady & Maryam Wedding Invitation"
+description = "A complete, polished, mobile-first digital wedding invitation website for Shady & Maryam. Features an animated opening screen, hero with floral frame, couple section, photo gallery with lightbox, reception info, live countdown, calendar, RSVP form, venue map, dress code, wedding day schedule, guestbook, and footer. Uses Firebase Firestore for RSVP and guestbook with localStorage fallback. Royal navy blue, ivory/cream, and gold design with floral luxury aesthetic and Framer Motion animations."
+version = "1.0.0"
+id = "artifacts/wedding-invite"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24366
+
+[services.development]
+run = "pnpm --filter @workspace/wedding-invite run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/wedding-invite", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/wedding-invite/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24366"
+BASE_PATH = "/"

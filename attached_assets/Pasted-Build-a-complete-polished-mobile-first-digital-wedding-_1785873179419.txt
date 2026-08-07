@@ -1,0 +1,287 @@
+Build a complete, polished, mobile-first digital wedding invitation website inspired by the uploaded reference screenshots.
+
+The website must look elegant, romantic, premium, and visually close to the reference, but do not copy any existing brand name, logo, watermark, or copyrighted website assets. Create an original implementation with the same general layout, functionality, floral luxury style, cream background, royal navy blue accents, and subtle gold details.
+
+TECH STACK:
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Framer Motion for animations
+- Lucide React for icons
+- Firebase Firestore for RSVP and guestbook data
+- Make it ready to run directly on Replit
+- Use clean reusable components
+- Use responsive mobile-first design
+- Do not use a heavy backend unless necessary
+
+GENERAL DESIGN:
+- Primary background: warm ivory / cream
+- Main accent: royal navy blue
+- Secondary accent: muted gold
+- Floral illustrations in blue, white, light grey, and muted green
+- Elegant serif typography for headings and names
+- Simple readable font for body text
+- Add a subtle paper texture or very soft watercolor texture in the background
+- Rounded cards with light shadows
+- Smooth scrolling
+- Soft fade, slide, and scale animations
+- The design should work especially well on mobile screens around 390px width
+- Desktop view should keep the content centered inside a narrow elegant invitation container
+- Maximum main content width around 720px
+- Add enough spacing between sections
+- Keep all sections visually consistent
+
+CREATE THESE SECTIONS:
+
+1. OPENING SCREEN
+- Full-screen royal blue background
+- Centered ivory invitation card
+- Soft floral decorations on the left and right edges
+- Display:
+  “SHADY”
+  “&”
+  “MARYAM”
+  “August 8, 2026”
+  “Cordially Invite You”
+- Add a large navy rounded button labeled “Open Invitation”
+- When clicked:
+  - animate the card opening or fading out
+  - reveal the main wedding invitation page
+  - start optional background music only after user interaction
+- Add a small music toggle button fixed at the bottom-right
+
+2. HERO / WELCOME SECTION
+- Large ornamental floral frame
+- Names centered inside:
+  “SHADY”
+  “&”
+  “MARYAM”
+- Add text:
+  “We joyfully announce the wedding of our children”
+- Add a romantic short message below
+- Elegant floral corner decorations
+- Add a subtle entrance animation
+
+3. BRIDE AND GROOM SECTION
+- Display:
+  “Shady”
+  “Groom”
+  “&”
+  “Maryam”
+  “Bride”
+- Add optional circular portrait placeholders
+- Make the image paths easy to replace later
+- Add a short story or introduction paragraph
+- Use elegant separators and floral ornaments
+
+4. PHOTO GALLERY
+- Responsive image grid
+- Start with 4 to 6 placeholder images
+- Rounded image corners
+- Clicking an image opens it in a full-screen lightbox
+- Include previous and next controls
+- Add soft hover and zoom effects
+- Make the gallery data editable from one configuration file
+
+5. RECEPTION INFORMATION
+- Heading: “Reception Info”
+- Display:
+  Saturday
+  08
+  August
+  2026
+  8:00 PM
+- Add an elegant date layout inspired by luxury invitations
+- Include venue name:
+  “Romanica Venue, Mokattam”
+- Include a short address
+- Add buttons:
+  “Add to Calendar”
+  “Open in Maps”
+- The calendar button should generate a valid Google Calendar link
+- The map button should open a configurable Google Maps URL
+
+6. LIVE COUNTDOWN
+- Create a live countdown to August 8, 2026 at 8:00 PM
+- Show:
+  Days
+  Hours
+  Minutes
+  Seconds
+- Update every second
+- When the date passes, display:
+  “Today is our special day!”
+- Style it with elegant navy boxes or clean typography
+
+7. CALENDAR SECTION
+- Display a visual calendar for August 2026
+- Highlight August 8 with a navy heart or circular marker
+- Add floral decorations in the calendar corners
+- Add an “Add to Calendar” link below
+
+8. RSVP SECTION
+- Heading: “Confirm Attendance”
+- Form fields:
+  Full Name
+  Phone Number
+  Number of Guests
+  Attendance status:
+    Attending
+    Not Attending
+  Optional message
+- Validate all required fields
+- Save submissions to Firebase Firestore
+- Show a success message after submission
+- Prevent accidental duplicate submission from the same browser
+- Add loading and error states
+- If Firebase environment variables are missing, fall back to localStorage so the website still works
+
+9. WEDDING VENUE SECTION
+- Heading: “Wedding Reception Venue”
+- Display venue name and address
+- Embed a responsive map
+- Add an “Open in Maps” button
+- Use a placeholder location that is easy to change from a settings file
+
+10. DRESS CODE SECTION
+- Heading: “Dress Code”
+- Subtitle: “Party Attire”
+- Display 5 circular color swatches:
+  dusty rose
+  powder blue
+  ivory
+  muted pink
+  soft magenta
+- Add a note:
+  “We would love to see you in elegant party attire.”
+- Do not make the colors mandatory; present them as inspiration
+
+11. WEDDING DAY SCHEDULE
+- Create a vertical timeline
+- Use navy dots and a thin connecting line
+- Example schedule:
+  6:30 PM — Welcome
+  7:00 PM — Reception
+  8:00 PM — Celebration Begins
+  8:45 PM — Dinner
+  9:30 PM — Cake Cutting
+  10:15 PM — Special Show
+  12:00 AM — Farewell
+- Add small elegant icons next to some events
+- Timeline must be easy to edit from a data file
+
+12. GUESTBOOK
+- Heading: “Guestbook”
+- Form fields:
+  Name
+  Enter your wishes
+- Add a “Send Wishes” button
+- Save wishes to Firebase Firestore
+- If Firebase is unavailable, save them to localStorage
+- Display submitted wishes underneath as elegant cards
+- Each wish card should show:
+  Name
+  Message
+  Date and time
+- Sort newest wishes first
+- Add form validation
+- Add loading, success, and error messages
+- Protect rendering from unsafe HTML input
+
+13. FINAL MESSAGE
+- Display:
+  “Your presence would be the greatest gift we could receive.”
+- Add the couple’s names below
+- Add a small heart icon
+- Include a footer with:
+  “Made with love for Shady & Maryam”
+- Do not include any third-party watermark
+
+FIXED ELEMENTS:
+- Floating music button at the bottom-right
+- Optional scroll-to-top button
+- Music should never autoplay before user interaction
+- Add mute and unmute states
+- Save music preference in localStorage
+
+PROJECT STRUCTURE:
+Create reusable components such as:
+- OpeningScreen
+- HeroSection
+- CoupleSection
+- GallerySection
+- EventInfo
+- Countdown
+- CalendarSection
+- RSVPForm
+- MapSection
+- DressCode
+- Timeline
+- Guestbook
+- MusicButton
+- Footer
+
+Create a central configuration file:
+src/data/weddingConfig.ts
+
+It should contain:
+- bride name
+- groom name
+- wedding date
+- ceremony time
+- venue name
+- address
+- Google Maps URL
+- gallery image paths
+- schedule items
+- dress code colors
+- music file path
+- invitation messages
+
+All text and event information should be editable from this one file.
+
+FIREBASE:
+- Add a clear Firebase setup file
+- Read credentials from environment variables
+- Provide a .env.example file
+- Use Firestore collections:
+  rsvps
+  guestbook
+- Do not hardcode secret keys
+- Add comments explaining how to connect Firebase
+- If Firebase is not configured, automatically use localStorage demo mode
+
+ACCESSIBILITY:
+- Proper labels for all form fields
+- Keyboard-accessible buttons
+- Visible focus states
+- Alt text for images
+- Sufficient color contrast
+- Respect prefers-reduced-motion
+- Semantic HTML structure
+
+PERFORMANCE:
+- Lazy-load gallery images
+- Optimize animations
+- Avoid unnecessary re-renders
+- Keep the site fast on mobile
+- Use compressed placeholder assets
+- Do not install unnecessary libraries
+
+DELIVERABLES:
+- Generate the full working project
+- Include all required source files
+- Include a README with:
+  installation
+  running the project
+  Replit setup
+  Firebase setup
+  changing the couple’s information
+  replacing photos
+  adding background music
+  deployment instructions
+- Make sure npm install and npm run dev work with no errors
+- Fix all TypeScript and build errors before finishing
+- Run the project and verify that every button and form works
+- Use original floral SVG decorations or royalty-free placeholder floral graphics

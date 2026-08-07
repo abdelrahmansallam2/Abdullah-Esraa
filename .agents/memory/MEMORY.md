@@ -1,0 +1,1 @@
+- [Wedding invitation build](wedding-invitation-build.md) — optional Firebase with local fallback keeps the invitation usable before service configuration.
