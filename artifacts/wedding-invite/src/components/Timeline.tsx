@@ -1,14 +1,27 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Cake, DoorOpen, Gift, Heart, Sparkles, Star, Utensils } from 'lucide-react';
 import { weddingConfig, type ScheduleItem } from '@/data/weddingConfig';
+import sideBorder from '@references/flower/Floral_Side_Border.jpeg';
 
 const icons = { 'door-open': DoorOpen, gift: Gift, sparkles: Sparkles, utensils: Utensils, cake: Cake, star: Star, heart: Heart };
 
 export default function Timeline() {
   const reduced = useReducedMotion();
   return (
-    <section id="schedule" className="relative overflow-hidden bg-[#f6f1e8] px-6 py-14" data-testid="section-schedule">
+    <section id="schedule" className="relative overflow-hidden px-6 py-14" data-testid="section-schedule">
       <div className="invite-shell">
+        <div
+          aria-hidden="true"
+          data-testid="decoration-timeline-floral"
+          className="pointer-events-none absolute -z-10 right-0 top-10 bottom-10 w-16 opacity-40 sm:w-32 sm:opacity-50"
+        >
+          <img
+            src={sideBorder}
+            alt=""
+            draggable={false}
+            className="floral-side-img -scale-x-100 h-full w-full object-cover object-left"
+          />
+        </div>
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: reduced ? 0 : 20 }}

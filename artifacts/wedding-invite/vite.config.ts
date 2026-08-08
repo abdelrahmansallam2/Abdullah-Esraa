@@ -56,6 +56,12 @@ export default defineConfig({
         '..',
         'attached_assets',
       ),
+      '@references': path.resolve(
+        import.meta.dirname,
+        '..',
+        '..',
+        'references',
+      ),
     },
     dedupe: ['react', 'react-dom'],
   },

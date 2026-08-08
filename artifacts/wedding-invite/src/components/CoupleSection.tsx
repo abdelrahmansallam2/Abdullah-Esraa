@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { User } from 'lucide-react';
-import FlowerDivider from './FlowerDivider';
+import FloralHeader from './FloralHeader';
 import { weddingConfig } from '@/data/weddingConfig';
 
 export default function CoupleSection() {
@@ -14,11 +13,11 @@ export default function CoupleSection() {
   return (
     <section
       id="couple"
-      className="bg-[#faf7f0] px-6 py-10"
+      className="px-6 py-10"
       data-testid="section-couple"
     >
       <div className="invite-shell">
-        <FlowerDivider />
+        <FloralHeader />
 
         <motion.div
           className="flex flex-col items-center text-center py-8"
@@ -35,15 +34,7 @@ export default function CoupleSection() {
             {weddingConfig.groomName}
           </h2>
 
-          <div className="my-6 flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-gradient-to-br from-[#8AAAC4] via-[#c9d6e6] to-[#1a3460]/30 border-2 border-[#c9a84c]/50 shadow-inner flex items-center justify-center">
-              <User className="h-12 w-12 text-[#1a3460]/50" strokeWidth={1} />
-            </div>
-            <p className="font-display italic text-3xl text-[#c9a84c]">&amp;</p>
-            <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-gradient-to-br from-[#D4A5A5] via-[#eadcd4] to-[#1a3460]/30 border-2 border-[#c9a84c]/50 shadow-inner flex items-center justify-center">
-              <User className="h-12 w-12 text-[#1a3460]/50" strokeWidth={1} />
-            </div>
-          </div>
+          <p className="my-6 font-display italic text-3xl text-[#c9a84c]">&amp;</p>
 
           <h2 className="font-display text-4xl sm:text-5xl text-[#1a3460]" data-testid="text-bride-name">
             {weddingConfig.brideName}
@@ -59,8 +50,6 @@ export default function CoupleSection() {
             {weddingConfig.invitationMessages.coupleStory}
           </p>
         </motion.div>
-
-        <FlowerDivider />
       </div>
     </section>
   );

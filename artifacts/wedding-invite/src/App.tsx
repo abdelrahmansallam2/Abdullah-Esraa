@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
@@ -9,20 +8,21 @@ import { ArrowUp } from 'lucide-react';
 import OpeningScreen, { hasOpenedInvitation } from '@/components/OpeningScreen';
 import HeroSection from '@/components/HeroSection';
 import CoupleSection from '@/components/CoupleSection';
-import GallerySection from '@/components/GallerySection';
+import ChildhoodMemories from '@/components/ChildhoodMemories';
 import EventInfo from '@/components/EventInfo';
 import Countdown from '@/components/Countdown';
 import CalendarSection from '@/components/CalendarSection';
-import RSVPForm from '@/components/RSVPForm';
 import MapSection from '@/components/MapSection';
 import DressCode from '@/components/DressCode';
 import Timeline from '@/components/Timeline';
 import Guestbook from '@/components/Guestbook';
 import MusicButton from '@/components/MusicButton';
-import FlowerDivider from '@/components/FlowerDivider';
-import Footer from '@/components/Footer';
-
-const queryClient = new QueryClient();
+import SectionDivider from '@/components/SectionDivider';
+import SideBorder from '@/components/SideBorder';
+import CornerFlower from '@/components/CornerFlower';
+import SignatureFooter from '@/components/SignatureFooter';
+import { weddingConfig } from '@/data/weddingConfig';
+import backgroundImage from '@references/background.jpg';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(() => hasOpenedInvitation());
@@ -39,32 +39,54 @@ function Home() {
       <AnimatePresence>{!isOpen && <OpeningScreen onOpen={() => setIsOpen(true)} />}</AnimatePresence>
       {isOpen && (
         <motion.main
-          className="min-h-screen overflow-hidden bg-[#faf7f0] text-[#1a3460]"
+          className="invitation-background min-h-screen overflow-hidden text-[#1a3460]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+          <SideBorder />
           <HeroSection />
           <CoupleSection />
-          <GallerySection />
+          <ChildhoodMemories />
           <EventInfo />
           <Countdown />
           <CalendarSection />
-          <RSVPForm />
           <MapSection />
           <DressCode />
           <Timeline />
           <Guestbook />
-          <section className="bg-[#faf7f0] px-6 py-20 text-center" data-testid="section-final-message">
+          <section className="relative px-6 py-20 text-center" data-testid="section-final-message">
             <div className="invite-shell">
-              <FlowerDivider />
+              <SectionDivider />
               <p className="mx-auto mt-8 max-w-md font-display text-3xl leading-tight text-[#1a3460] sm:text-4xl">
-                Your presence would be the greatest gift we could receive.
+                {weddingConfig.invitationMessages.finalMessage}
               </p>
-              <p className="mt-6 font-display text-2xl italic text-[#c9a84c]">Shady &amp; Maryam</p>
+              <div className="mt-9">
+                <p className="text-[10px] font-sans uppercase tracking-[0.35em] text-[#8a7845]">
+                  {weddingConfig.invitationMessages.signatureIntro}
+                </p>
+                <p
+                  className="mt-2 font-display text-3xl text-[#c9a84c]"
+                  data-testid="text-final-names"
+                >
+                  {weddingConfig.groomName} &amp; {weddingConfig.brideName}
+                </p>
+                <p className="mt-1 font-display italic text-lg text-[#1a3460]/70">
+                  {weddingConfig.invitationMessages.signatureDate}
+                </p>
+              </div>
             </div>
+            <CornerFlower
+              placement="bottom-right"
+              className="-z-10 bottom-0 right-0 h-32 w-32 sm:h-48 sm:w-48"
+            />
           </section>
-          <Footer />
+          <SignatureFooter />
           <MusicButton />
           <AnimatePresence>
             {showTop && (
@@ -99,14 +121,12 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <TooltipProvider>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+        <Router />
+      </WouterRouter>
+      <Toaster />
+    </TooltipProvider>
   );
 }
 

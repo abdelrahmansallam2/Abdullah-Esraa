@@ -1,39 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Music, VolumeX } from 'lucide-react';
-import { weddingConfig } from '@/data/weddingConfig';
-
-const STORAGE_KEY = 'wedding-music-playing';
+import { getMusicAudio, isMusicPlaying, pauseMusic, playMusic } from '@/lib/music';
 
 export default function MusicButton() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    const audio = new Audio(weddingConfig.musicPath);
-    audio.loop = true;
-    audio.volume = 0.5;
-    audioRef.current = audio;
-
+    const audio = getMusicAudio();
+    if (!audio) return;
+    const sync = () => setIsPlaying(!audio.paused);
+    audio.addEventListener('play', sync);
+    audio.addEventListener('pause', sync);
+    setIsPlaying(isMusicPlaying());
     return () => {
-      audio.pause();
-      audioRef.current = null;
+      audio.removeEventListener('play', sync);
+      audio.removeEventListener('pause', sync);
     };
   }, []);
 
   const handleToggle = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
+    if (isMusicPlaying()) {
+      pauseMusic();
       setIsPlaying(false);
-      localStorage.setItem(STORAGE_KEY, 'false');
     } else {
-      audio.play().catch(() => {
-        // Autoplay restrictions or missing file — fail silently, UI still toggles intent.
-      });
-      setIsPlaying(true);
-      localStorage.setItem(STORAGE_KEY, 'true');
+      void playMusic().then((started) => setIsPlaying(started));
     }
   };
 

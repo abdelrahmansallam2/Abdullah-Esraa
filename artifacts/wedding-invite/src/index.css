@@ -243,18 +243,13 @@
     font-family: var(--app-font-serif);
   }
 
-  .paper-texture {
+  /* Global invitation wrapper: sections stay transparent so the supplied
+     `references/background.jpg` (rendered by a fixed layer in App) shows
+     through everywhere. */
+  .invitation-background {
     position: relative;
-  }
-
-  .paper-texture::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 0;
+    isolation: isolate;
   }
 
   .gold-divider {
@@ -419,6 +414,78 @@
     position: relative;
     z-index: 1;
   }
+
+  /* ===== Floral system — `references/flower/` assets =====
+     Every decoration is feathered ONLY at the outer image boundaries so the
+     assets read as painted onto the shared ivory paper (`references/background`).
+     The flower artwork itself is never faded, recolored, or distorted. */
+
+  .floral-divider-img {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  .floral-header-img {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 55%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  .floral-side-img {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 25%,
+      black 55%,
+      transparent 92%
+    );
+    mask-image: linear-gradient(
+      to right,
+      black 25%,
+      black 55%,
+      transparent 92%
+    );
+  }
+
+  .floral-corner-img {
+    -webkit-mask-image: radial-gradient(
+      135% 135% at var(--corner-x, 100%) var(--corner-y, 100%),
+      black 45%,
+      transparent 80%
+    );
+    mask-image: radial-gradient(
+      135% 135% at var(--corner-x, 100%) var(--corner-y, 100%),
+      black 45%,
+      transparent 80%
+    );
+  }
+
+  .floral-frame-img {
+    -webkit-mask-image: radial-gradient(
+      ellipse 97% 95% at center,
+      black 86%,
+      transparent 99%
+    );
+    mask-image: radial-gradient(
+      ellipse 97% 95% at center,
+      black 86%,
+      transparent 99%
+    );
+  }
 }
 
 ::selection {
@@ -441,4 +508,11 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Ivory fallback behind the supplied `references/background.jpg`, which is
+   rendered as a fixed, cover-fit layer in App so it stays intact and seamless
+   at every viewport size. */
+body {
+  background-color: #faf7f0;
 }

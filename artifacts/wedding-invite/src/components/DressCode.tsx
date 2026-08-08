@@ -1,13 +1,13 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { weddingConfig } from '@/data/weddingConfig';
-import FlowerDivider from './FlowerDivider';
+import SectionDivider from './SectionDivider';
 
 export default function DressCode() {
   const reduced = useReducedMotion();
   return (
-    <section id="dress-code" className="bg-[#faf7f0] px-6 py-14" data-testid="section-dress-code">
+    <section id="dress-code" className="px-6 py-14" data-testid="section-dress-code">
       <div className="invite-shell text-center">
-        <FlowerDivider />
+        <SectionDivider />
         <motion.div
           initial={{ opacity: 0, y: reduced ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,6 @@ export default function DressCode() {
             {weddingConfig.invitationMessages.dressCodeNote}
           </p>
         </motion.div>
-        <FlowerDivider className="mt-8" />
       </div>
     </section>
   );

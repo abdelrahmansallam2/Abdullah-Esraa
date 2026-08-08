@@ -27,9 +27,8 @@ if (hasFirebaseConfig) {
   }
 } else {
   console.info(
-    'Firebase env vars not set — RSVP and guestbook will use localStorage fallback.',
+    'Firebase env vars not set — guestbook will use localStorage fallback.',
   );
 }
 
-export const RSVP_COLLECTION = 'rsvps';
 export const GUESTBOOK_COLLECTION = 'guestbook';

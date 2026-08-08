@@ -4,10 +4,9 @@ import { weddingConfig } from '@/data/weddingConfig';
 
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
-function buildAugust2026Grid(): (number | null)[] {
-  // August 1, 2026 is a Saturday (index 6, if Sunday = 0)
-  const firstWeekday = new Date(2026, 7, 1).getDay();
-  const daysInMonth = 31;
+function buildMonthGrid(year: number, month: number): (number | null)[] {
+  const firstWeekday = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
   const cells: (number | null)[] = Array(firstWeekday).fill(null);
   for (let day = 1; day <= daysInMonth; day += 1) {
     cells.push(day);
@@ -20,8 +19,12 @@ function buildAugust2026Grid(): (number | null)[] {
 
 export default function CalendarSection() {
   const shouldReduceMotion = useReducedMotion();
-  const cells = buildAugust2026Grid();
-  const weddingDay = weddingConfig.weddingDate.getDate();
+  const weddingDay = weddingConfig.weddingDate;
+  const cells = buildMonthGrid(weddingDay.getFullYear(), weddingDay.getMonth());
+  const dayOfMonth = weddingDay.getDate();
+  const monthTitle = weddingDay
+    .toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    .toUpperCase();
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
@@ -31,7 +34,7 @@ export default function CalendarSection() {
   return (
     <section
       id="calendar"
-      className="bg-[#faf7f0] px-6 py-12"
+      className="px-6 py-12"
       data-testid="section-calendar"
     >
       <div className="invite-shell flex flex-col items-center">
@@ -43,7 +46,7 @@ export default function CalendarSection() {
           variants={fadeUp}
           transition={{ duration: 0.7 }}
         >
-          AUGUST 2026
+          {monthTitle}
         </motion.h2>
 
         <motion.div
@@ -67,7 +70,7 @@ export default function CalendarSection() {
 
           <div className="grid grid-cols-7 gap-1.5">
             {cells.map((day, index) => {
-              const isWeddingDay = day === weddingDay;
+              const isWeddingDay = day === dayOfMonth;
               return (
                 <div
                   key={index}
@@ -101,16 +104,6 @@ export default function CalendarSection() {
             })}
           </div>
         </motion.div>
-
-        <a
-          href={weddingConfig.googleCalendarUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-testid="link-calendar-add"
-          className="mt-6 text-sm font-sans tracking-wide text-[#1a3460] underline decoration-[#c9a84c] decoration-2 underline-offset-4 hover:text-[#c9a84c] transition-colors"
-        >
-          Add to Calendar
-        </a>
       </div>
     </section>
   );
