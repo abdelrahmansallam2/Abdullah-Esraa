@@ -90,9 +90,9 @@ export const weddingConfig = {
     ] as ChildhoodPhoto[],
   },
 
-  // Music: Angham — "Mesh Habibi".
-  // Place the MP3 at: artifacts/wedding-invite/public/music/mesh-habibi.mp3
-  musicPath: '/music/mesh-habibi.mp3',
+  // Music: "El Leil W Samah" / "الليل وسماه".
+  // Place the MP3 at: artifacts/wedding-invite/public/music/el-leil-w-samah.mp3
+  musicPath: '/music/el-leil-w-samah.mp3',
 
   invitationMessages: {
     openingIntro: 'Together with their families',

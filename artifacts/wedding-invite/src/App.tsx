@@ -20,7 +20,6 @@ import MusicButton from '@/components/MusicButton';
 import SectionDivider from '@/components/SectionDivider';
 import SideBorder from '@/components/SideBorder';
 import CornerFlower from '@/components/CornerFlower';
-import SignatureFooter from '@/components/SignatureFooter';
 import { weddingConfig } from '@/data/weddingConfig';
 import backgroundImage from '@references/background.jpg';
 
@@ -86,7 +85,6 @@ function Home() {
               className="-z-10 bottom-0 right-0 h-32 w-32 sm:h-48 sm:w-48"
             />
           </section>
-          <SignatureFooter />
           <MusicButton />
           <AnimatePresence>
             {showTop && (
