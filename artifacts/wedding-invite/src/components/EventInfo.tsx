@@ -23,11 +23,11 @@ export default function EventInfo() {
   return (
     <section
       id="reception"
-      className="px-6 py-10"
+      className="px-6 pt-4 pb-10"
       data-testid="section-reception-info"
     >
       <div className="invite-shell">
-        <SectionDivider />
+        <SectionDivider className="mb-4" />
 
         <motion.div
           className="flex flex-col items-center text-center py-8"

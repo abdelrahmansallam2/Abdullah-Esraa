@@ -81,10 +81,9 @@ export const weddingConfig = {
     { name: 'Powder Pink', hex: '#FBE7EE' },
   ] as DressCodeColor[],
 
-  // Our Childhood Memories — two photos (groom & bride).
+  // Photo Gallery — two photos (groom & bride).
   childhood: {
-    title: 'OUR CHILDHOOD MEMORIES',
-    subtitle: 'Before forever began, there were these little moments.',
+    title: 'PHOTO GALLERY',
     photos: [
       { src: abdullahChildhood, name: groomName, label: 'THE GROOM' },
       { src: esraaChildhood, name: brideName, label: 'THE BRIDE' },
