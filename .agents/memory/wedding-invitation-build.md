@@ -1,6 +1,6 @@
 ---
 name: Wedding invitation build
-description: Durable product decision for the Shady and Maryam invitation.
+description: Durable product decision for the Abdullah and Esraa invitation.
 ---
 
 The invitation must remain fully usable without Firebase configuration; RSVP and guestbook persistence should fall back to browser storage, while using Firestore automatically when all client configuration values are available.

@@ -39,9 +39,9 @@ CREATE THESE SECTIONS:
 - Centered ivory invitation card
 - Soft floral decorations on the left and right edges
 - Display:
-  “SHADY”
+  “ABDULLAH”
   “&”
-  “MARYAM”
+  “ESRAA”
   “August 8, 2026”
   “Cordially Invite You”
 - Add a large navy rounded button labeled “Open Invitation”
@@ -54,9 +54,9 @@ CREATE THESE SECTIONS:
 2. HERO / WELCOME SECTION
 - Large ornamental floral frame
 - Names centered inside:
-  “SHADY”
+  “ABDULLAH”
   “&”
-  “MARYAM”
+  “ESRAA”
 - Add text:
   “We joyfully announce the wedding of our children”
 - Add a romantic short message below
@@ -65,10 +65,10 @@ CREATE THESE SECTIONS:
 
 3. BRIDE AND GROOM SECTION
 - Display:
-  “Shady”
+  “Abdullah”
   “Groom”
   “&”
-  “Maryam”
+  “Esraa”
   “Bride”
 - Add optional circular portrait placeholders
 - Make the image paths easy to replace later
@@ -195,7 +195,7 @@ CREATE THESE SECTIONS:
 - Add the couple’s names below
 - Add a small heart icon
 - Include a footer with:
-  “Made with love for Shady & Maryam”
+  “Made with love for Abdullah & Esraa”
 - Do not include any third-party watermark
 
 FIXED ELEMENTS:
