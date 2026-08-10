@@ -27,6 +27,11 @@ function toGoogleCalendarDate(date: Date): string {
 const weddingDate = new Date('2026-09-08T19:00:00+03:00');
 const weddingEndDate = new Date('2026-09-08T23:00:00+03:00');
 
+// Single source of truth for every displayed wedding-date string — all derived
+// from `weddingDate` so the date can never drift between sections.
+const weddingDateLabel = `${weddingDate.getUTCDate().toString().padStart(2, '0')} ${weddingDate.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' })} ${weddingDate.getUTCFullYear()}`;
+const weddingDayLabel = weddingDate.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
+
 const groomName = 'Abdullah';
 const brideName = 'Esraa';
 
@@ -66,8 +71,8 @@ export const weddingConfig = {
   // Hero / main invitation typography — fully editable from here.
   hero: {
     preTitle: 'THE WEDDING OF',
-    weekday: 'Wednesday',
-    date: '09 September 2026',
+    weekday: weddingDayLabel,
+    date: weddingDateLabel,
     time: '7:00 PM - 11:00 PM',
   },
 
@@ -108,7 +113,7 @@ export const weddingConfig = {
     coupleStory: 'Two hearts, one journey, and a lifetime ahead.',
     finalMessage: 'Your presence would be the greatest gift we could receive.',
     signatureIntro: 'WITH LOVE',
-    signatureDate: '09 September 2026',
+    signatureDate: weddingDateLabel,
     dressCodeNote: 'A soft touch of pink for our special evening.',
   },
 };
