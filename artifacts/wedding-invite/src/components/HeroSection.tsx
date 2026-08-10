@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import ornamentalFrame from '@references/Ornamental_Floral_Frame 1.png';
+import ornamentalFrame from '@references/Ornamental_Floral_Frame 1.webp';
 import { weddingConfig } from '@/data/weddingConfig';
 
 export default function HeroSection() {
@@ -39,7 +39,7 @@ export default function HeroSection() {
               {weddingConfig.hero.preTitle}
             </p>
             <h1
-              className="mt-1.5 font-ruqaa text-3xl leading-[1.35] text-[#1a3460] sm:text-[38px]"
+              className="mt-1.5 font-calligraphy text-shadow-gold text-3xl leading-[1.4] text-[#1a3460] sm:text-[38px]"
               data-testid="text-hero-groom"
               dir="rtl"
               lang="ar"
@@ -50,7 +50,7 @@ export default function HeroSection() {
               &amp;
             </p>
             <h1
-              className="font-ruqaa text-3xl leading-[1.35] text-[#1a3460] sm:text-[38px]"
+              className="font-calligraphy text-shadow-gold text-3xl leading-[1.4] text-[#1a3460] sm:text-[38px]"
               data-testid="text-hero-bride"
               dir="rtl"
               lang="ar"
