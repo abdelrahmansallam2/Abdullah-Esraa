@@ -3,6 +3,9 @@
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
+/* Dark mode is permanently disabled: the `dark:` variant only matches inside
+   a `.dark` ancestor, which is never applied anywhere. This prevents Tailwind
+   from generating any `@media (prefers-color-scheme: dark)` rules. */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -188,43 +191,6 @@
     from hsl(var(--destructive)) h s
       calc(l + var(--opaque-button-border-intensity)) / alpha
   );
-}
-
-.dark {
-  --background: 218 48% 10%;
-  --foreground: 42 38% 92%;
-  --border: 218 30% 22%;
-  --card: 218 45% 13%;
-  --card-foreground: 42 38% 92%;
-  --card-border: 218 30% 22%;
-  --sidebar: 218 45% 13%;
-  --sidebar-foreground: 42 38% 92%;
-  --sidebar-border: 218 30% 22%;
-  --sidebar-primary: 43 48% 52%;
-  --sidebar-primary-foreground: 218 48% 15%;
-  --sidebar-accent: 218 30% 20%;
-  --sidebar-accent-foreground: 42 38% 92%;
-  --sidebar-ring: 43 48% 52%;
-  --popover: 218 45% 13%;
-  --popover-foreground: 42 38% 92%;
-  --popover-border: 218 30% 22%;
-  --primary: 43 48% 52%;
-  --primary-foreground: 218 48% 15%;
-  --secondary: 218 30% 20%;
-  --secondary-foreground: 42 38% 92%;
-  --muted: 218 30% 18%;
-  --muted-foreground: 42 20% 65%;
-  --accent: 43 48% 52%;
-  --accent-foreground: 218 48% 15%;
-  --destructive: 6 55% 55%;
-  --destructive-foreground: 42 38% 92%;
-  --input: 218 30% 22%;
-  --ring: 43 48% 52%;
-  --chart-1: 43 48% 52%;
-  --chart-2: 210 40% 60%;
-  --chart-3: 218 60% 60%;
-  --chart-4: 6 40% 60%;
-  --chart-5: 150 20% 50%;
 }
 
 @layer base {
@@ -493,8 +459,19 @@
   color: hsl(var(--primary));
 }
 
+/* ===== Force Light Mode permanently =====
+   The invitation must never render in dark mode, regardless of the
+   visitor's device/browser/OS theme (prefers-color-scheme, dark mode
+   settings, system appearance). color-scheme: light keeps native form
+   controls, inputs, selects, textareas, buttons, scrollbars, and UA
+   chrome light too. */
+:root {
+  color-scheme: only light;
+}
+
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -514,5 +491,14 @@ html {
    rendered as a fixed, cover-fit layer in App so it stays intact and seamless
    at every viewport size. */
 body {
+  color-scheme: light;
   background-color: #faf7f0;
+}
+
+/* Keep native form controls permanently light to match the wedding design. */
+input,
+textarea,
+select,
+button {
+  color-scheme: light;
 }
