@@ -264,9 +264,11 @@
      Rakkas — a Diwani-script display face — reads as designed wedding
      calligraphy rather than plain typed text. No letter-spacing is applied —
      Arabic is a connected script and must not be spaced apart; line-height is
-     generous so Rakkas's extended descenders/ascenders never clip. */
+     generous so Rakkas's extended descenders/ascenders never clip.
+     !important guarantees this family always wins over any inherited or
+     competing font rule on the name elements. */
   .font-calligraphy {
-    font-family: var(--app-font-calligraphy);
+    font-family: var(--app-font-calligraphy) !important;
     letter-spacing: 0;
   }
 
