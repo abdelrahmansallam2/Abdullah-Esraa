@@ -18,7 +18,9 @@ export default function MapSection() {
           <h2 className="section-title mt-2">WEDDING RECEPTION VENUE</h2>
           <p className="mt-4 font-display text-2xl text-[#1a3460]">{weddingConfig.venueName}</p>
           <p className="mt-1 font-display italic text-lg text-[#1a3460]/75">{weddingConfig.venueHall}</p>
-          <p className="mt-1 text-sm text-[#1a3460]/65">{weddingConfig.venueAddress}</p>
+          {weddingConfig.venueAddress && (
+            <p className="mt-1 text-sm text-[#1a3460]/65">{weddingConfig.venueAddress}</p>
+          )}
         </motion.div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-[#c9a84c]/35 bg-[#e9e1d3] shadow-sm">
           <div

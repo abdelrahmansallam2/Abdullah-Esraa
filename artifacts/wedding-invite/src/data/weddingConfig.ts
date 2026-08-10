@@ -24,8 +24,8 @@ function toGoogleCalendarDate(date: Date): string {
   return date.toISOString().replace(/[-:]|\.\d{3}/g, '');
 }
 
-const weddingDate = new Date('2026-09-09T19:00:00+03:00');
-const weddingEndDate = new Date('2026-09-09T23:00:00+03:00');
+const weddingDate = new Date('2026-09-08T19:00:00+03:00');
+const weddingEndDate = new Date('2026-09-08T23:00:00+03:00');
 
 const groomName = 'Abdullah';
 const brideName = 'Esraa';
@@ -34,10 +34,10 @@ const brideName = 'Esraa';
 // name displays in the invitation.
 const groomNameArabic = 'عبدالله';
 const brideNameArabic = 'إسراء';
-const venueName = 'BARBARA HALLS GROUP';
-const venueHall = 'LAROSE Hall';
-const venueAddress = 'El Mazallat - Esco Club';
-const googleMapsUrl = 'https://maps.app.goo.gl/aMskhPBf7sAfH38F6?g_st=aw';
+const venueName = 'TULIP';
+const venueHall = 'Panorama Harb October';
+const venueAddress = '';
+const googleMapsUrl = 'https://maps.app.goo.gl/9mZCCEjaV1nFqw9a9';
 
 function buildGoogleCalendarUrl(): string {
   const params = new URLSearchParams({
@@ -45,7 +45,7 @@ function buildGoogleCalendarUrl(): string {
     text: `${groomName} & ${brideName}'s Wedding`,
     dates: `${toGoogleCalendarDate(weddingDate)}/${toGoogleCalendarDate(weddingEndDate)}`,
     details: `Join us as we celebrate the wedding of ${groomName} & ${brideName} at ${venueName} - ${venueHall}.`,
-    location: venueAddress,
+    location: venueHall,
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }

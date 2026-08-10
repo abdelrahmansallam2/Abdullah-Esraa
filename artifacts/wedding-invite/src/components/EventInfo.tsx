@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
 import SectionDivider from './SectionDivider';
 import { weddingConfig } from '@/data/weddingConfig';
 
@@ -70,22 +69,6 @@ export default function EventInfo() {
           <p className="mt-1 font-display italic text-lg text-[#1a3460]/75">
             {weddingConfig.venueHall}
           </p>
-          <p className="mt-1 text-xs tracking-wide font-sans text-[#1a3460]/60">
-            {weddingConfig.venueAddress}
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full max-w-sm">
-            <a
-              href={weddingConfig.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-open-maps"
-              className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#1a3460] text-[#f5efe0] font-sans text-sm tracking-wide py-3.5 px-6 shadow-md shadow-[#1a3460]/20 hover:scale-[1.02] active:scale-95 transition-transform"
-            >
-              <MapPin className="h-4 w-4" />
-              Open in Maps
-            </a>
-          </div>
         </motion.div>
       </div>
     </section>
