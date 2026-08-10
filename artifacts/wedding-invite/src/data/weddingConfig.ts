@@ -33,7 +33,7 @@ const weddingDateLabel = `${weddingDate.getUTCDate().toString().padStart(2, '0')
 const weddingDayLabel = weddingDate.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
 
 const groomName = 'Abdalla';
-const brideName = 'Esraa';
+const brideName = 'E';
 const venueName = 'TULIP';
 const venueHall = 'Panorama Harb October';
 const venueAddress = '';
