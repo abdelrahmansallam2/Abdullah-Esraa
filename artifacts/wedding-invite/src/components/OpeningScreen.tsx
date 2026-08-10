@@ -59,12 +59,20 @@ export default function OpeningScreen({ onOpen }: OpeningScreenProps) {
         />
 
         <div className="relative z-10 flex flex-col items-center text-center px-8 py-14 sm:py-16">
-          <h1 className="font-display text-4xl sm:text-5xl text-[#1a3460] tracking-wide leading-none">
-            {weddingConfig.groomName.toUpperCase()}
+          <h1
+            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] sm:text-5xl"
+            dir="rtl"
+            lang="ar"
+          >
+            {weddingConfig.groomNameArabic}
           </h1>
           <p className="font-display italic text-2xl text-[#c9a84c] my-2">&amp;</p>
-          <h1 className="font-display text-4xl sm:text-5xl text-[#1a3460] tracking-wide leading-none">
-            {weddingConfig.brideName.toUpperCase()}
+          <h1
+            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] sm:text-5xl"
+            dir="rtl"
+            lang="ar"
+          >
+            {weddingConfig.brideNameArabic}
           </h1>
 
           <div className="w-16 gold-divider my-6" />

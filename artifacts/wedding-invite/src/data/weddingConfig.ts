@@ -29,6 +29,11 @@ const weddingEndDate = new Date('2026-09-09T23:00:00+03:00');
 
 const groomName = 'Abdullah';
 const brideName = 'Esraa';
+
+// Arabic (رقعة) renderings of the couple's names for the major decorative
+// name displays in the invitation.
+const groomNameArabic = 'عبدالله';
+const brideNameArabic = 'إسراء';
 const venueName = 'BARBARA HALLS GROUP';
 const venueHall = 'LAROSE Hall';
 const venueAddress = 'El Mazallat - Esco Club';
@@ -48,6 +53,8 @@ function buildGoogleCalendarUrl(): string {
 export const weddingConfig = {
   groomName,
   brideName,
+  groomNameArabic,
+  brideNameArabic,
   weddingDate,
   weddingEndDate,
   venueName,

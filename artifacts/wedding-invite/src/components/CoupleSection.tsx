@@ -30,14 +30,24 @@ export default function CoupleSection() {
           <p className="text-xs tracking-[0.3em] uppercase text-[#1a3460]/60 font-sans">
             Groom
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl text-[#1a3460] mt-1" data-testid="text-groom-name">
-            {weddingConfig.groomName}
+          <h2
+            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] mt-1 sm:text-5xl"
+            data-testid="text-groom-name"
+            dir="rtl"
+            lang="ar"
+          >
+            {weddingConfig.groomNameArabic}
           </h2>
 
           <p className="my-6 font-display italic text-3xl text-[#c9a84c]">&amp;</p>
 
-          <h2 className="font-display text-4xl sm:text-5xl text-[#1a3460]" data-testid="text-bride-name">
-            {weddingConfig.brideName}
+          <h2
+            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] sm:text-5xl"
+            data-testid="text-bride-name"
+            dir="rtl"
+            lang="ar"
+          >
+            {weddingConfig.brideNameArabic}
           </h2>
           <p className="text-xs tracking-[0.3em] uppercase text-[#1a3460]/60 font-sans mt-1">
             Bride
