@@ -39,23 +39,19 @@ export default function HeroSection() {
               {weddingConfig.hero.preTitle}
             </p>
             <h1
-              className="mt-1.5 font-calligraphy text-shadow-gold text-3xl leading-[1.4] text-[#1a3460] sm:text-[38px]"
+              className="mt-1.5 font-display text-2xl leading-none tracking-wide text-[#1a3460] sm:text-4xl"
               data-testid="text-hero-groom"
-              dir="rtl"
-              lang="ar"
             >
-              {weddingConfig.groomNameArabic}
+              {weddingConfig.groomName.toUpperCase()}
             </h1>
             <p className="my-1 font-display text-lg italic leading-none text-[#c9a84c] sm:text-xl">
               &amp;
             </p>
             <h1
-              className="font-calligraphy text-shadow-gold text-3xl leading-[1.4] text-[#1a3460] sm:text-[38px]"
+              className="font-display text-2xl leading-none tracking-wide text-[#1a3460] sm:text-4xl"
               data-testid="text-hero-bride"
-              dir="rtl"
-              lang="ar"
             >
-              {weddingConfig.brideNameArabic}
+              {weddingConfig.brideName.toUpperCase()}
             </h1>
 
             <div className="gold-divider my-2.5 w-12" />

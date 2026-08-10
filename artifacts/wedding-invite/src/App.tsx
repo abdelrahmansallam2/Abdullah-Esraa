@@ -70,12 +70,10 @@ function Home() {
                   {weddingConfig.invitationMessages.signatureIntro}
                 </p>
                 <p
-                  className="mt-2 font-calligraphy text-3xl leading-[1.6] text-[#c9a84c]"
+                  className="mt-2 font-display text-3xl text-[#c9a84c]"
                   data-testid="text-final-names"
-                  dir="rtl"
-                  lang="ar"
                 >
-                  {weddingConfig.groomNameArabic} &amp; {weddingConfig.brideNameArabic}
+                  {weddingConfig.groomName} &amp; {weddingConfig.brideName}
                 </p>
                 <p className="mt-1 font-display italic text-lg text-[#1a3460]/70">
                   {weddingConfig.invitationMessages.signatureDate}

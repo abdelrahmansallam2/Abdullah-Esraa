@@ -32,13 +32,8 @@ const weddingEndDate = new Date('2026-09-08T23:00:00+03:00');
 const weddingDateLabel = `${weddingDate.getUTCDate().toString().padStart(2, '0')} ${weddingDate.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' })} ${weddingDate.getUTCFullYear()}`;
 const weddingDayLabel = weddingDate.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
 
-const groomName = 'Abdullah';
+const groomName = 'Abdalla';
 const brideName = 'Esraa';
-
-// Arabic (رقعة) renderings of the couple's names for the major decorative
-// name displays in the invitation.
-const groomNameArabic = 'عبدالله';
-const brideNameArabic = 'إسراء';
 const venueName = 'TULIP';
 const venueHall = 'Panorama Harb October';
 const venueAddress = '';
@@ -58,8 +53,6 @@ function buildGoogleCalendarUrl(): string {
 export const weddingConfig = {
   groomName,
   brideName,
-  groomNameArabic,
-  brideNameArabic,
   weddingDate,
   weddingEndDate,
   venueName,
