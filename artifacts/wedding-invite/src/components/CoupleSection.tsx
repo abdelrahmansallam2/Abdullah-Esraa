@@ -31,7 +31,7 @@ export default function CoupleSection() {
             Groom
           </p>
           <h2
-            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] mt-1 sm:text-5xl"
+            className="font-ruqaa text-5xl leading-[1.35] text-[#1a3460] mt-1 sm:text-6xl"
             data-testid="text-groom-name"
             dir="rtl"
             lang="ar"
@@ -42,7 +42,7 @@ export default function CoupleSection() {
           <p className="my-6 font-display italic text-3xl text-[#c9a84c]">&amp;</p>
 
           <h2
-            className="font-ruqaa text-4xl leading-[1.3] text-[#1a3460] sm:text-5xl"
+            className="font-ruqaa text-5xl leading-[1.35] text-[#1a3460] sm:text-6xl"
             data-testid="text-bride-name"
             dir="rtl"
             lang="ar"

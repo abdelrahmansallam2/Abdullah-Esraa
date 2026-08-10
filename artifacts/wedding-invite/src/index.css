@@ -1,25 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
 @import 'tailwindcss';
 
-/* Aref Ruqaa — authentic Arabic Ruq'ah (رقعة) calligraphic display font.
-   Self-hosted so the invitation is not dependent on locally installed fonts
-   and loads reliably in production on Vercel. Arabic-only subset; Latin
-   characters (e.g. the "&" separator) fall back to the display serif. */
+/* Aref Ruqaa Ink — decorative Arabic Ruq'ah calligraphy with artistic
+   ink-splash letterforms, so the couple's names read as designed wedding
+   calligraphy rather than plain typed text. Self-hosted so the invitation is
+   not dependent on locally installed fonts and loads reliably in production
+   on Vercel. Arabic-only subset; Latin characters (e.g. the "&" separator)
+   fall back to the display serif. */
 @font-face {
-  font-family: 'Aref Ruqaa';
+  font-family: 'Aref Ruqaa Ink';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/aref-ruqaa-arabic-400.woff2') format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
-}
-
-@font-face {
-  font-family: 'Aref Ruqaa';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/aref-ruqaa-arabic-700.woff2') format('woff2');
+  src: url('/fonts/aref-ruqaa-ink-arabic-400.woff2') format('woff2');
   unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @import 'tw-animate-css';
@@ -147,7 +140,7 @@
   --app-font-sans: 'Lato', sans-serif;
   --app-font-serif: 'Cormorant Garamond', serif;
   --app-font-mono: 'Cormorant Garamond', serif;
-  --app-font-ruqaa: 'Aref Ruqaa', 'Noto Naskh Arabic', 'Traditional Arabic', 'Geeza Pro', serif;
+  --app-font-ruqaa: 'Aref Ruqaa Ink', 'Noto Naskh Arabic', 'Traditional Arabic', 'Geeza Pro', serif;
   --radius: 0.5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(218 60% 22% / 0);
   --shadow-xs: 0px 2px 0px 0px hsl(218 60% 22% / 0);
@@ -266,9 +259,11 @@
     font-family: var(--app-font-serif);
   }
 
-  /* Arabic Ruq'ah calligraphy used for the couple's names in Arabic.
-     No letter-spacing is applied — Arabic is a connected script and must not
-     be spaced apart; line-height is generous so ascenders/diagonals never clip. */
+  /* Arabic calligraphy used for the couple's names in Arabic.
+     Aref Ruqaa Ink — a decorative ink-splash Ruq'ah display face — reads as
+     designed wedding calligraphy rather than plain typed text. No
+     letter-spacing is applied — Arabic is a connected script and must not be
+     spaced apart; line-height is generous so swashes/ascenders never clip. */
   .font-ruqaa {
     font-family: var(--app-font-ruqaa);
     letter-spacing: 0;

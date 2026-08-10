@@ -70,7 +70,7 @@ function Home() {
                   {weddingConfig.invitationMessages.signatureIntro}
                 </p>
                 <p
-                  className="mt-2 font-ruqaa text-3xl leading-[1.4] text-[#c9a84c]"
+                  className="mt-2 font-ruqaa text-3xl leading-[1.5] text-[#c9a84c]"
                   data-testid="text-final-names"
                   dir="rtl"
                   lang="ar"
