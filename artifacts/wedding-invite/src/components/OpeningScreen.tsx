@@ -60,7 +60,7 @@ export default function OpeningScreen({ onOpen }: OpeningScreenProps) {
 
         <div className="relative z-10 flex flex-col items-center text-center px-8 py-14 sm:py-16">
           <h1
-            className="font-calligraphy text-shadow-gold text-5xl leading-[1.4] text-[#1a3460] sm:text-6xl"
+            className="font-calligraphy text-shadow-gold text-6xl leading-[1.3] text-[#1a3460] sm:text-7xl"
             dir="rtl"
             lang="ar"
           >
@@ -68,7 +68,7 @@ export default function OpeningScreen({ onOpen }: OpeningScreenProps) {
           </h1>
           <p className="font-display italic text-2xl text-[#c9a84c] my-2">&amp;</p>
           <h1
-            className="font-calligraphy text-shadow-gold text-5xl leading-[1.4] text-[#1a3460] sm:text-6xl"
+            className="font-calligraphy text-shadow-gold text-6xl leading-[1.3] text-[#1a3460] sm:text-7xl"
             dir="rtl"
             lang="ar"
           >
